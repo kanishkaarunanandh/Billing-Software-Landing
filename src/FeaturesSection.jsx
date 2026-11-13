@@ -13,7 +13,7 @@ export default function FeaturesSection() {
 
         {/* 01 Smart Billing : text left / POS right */}
         <section className="sec t-white glass" style={{ borderTop: '1px solid #EEECE7' }}>
-          <div className="wrap g2" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 5fr) minmax(0, 7fr)', gap: '80px', alignItems: 'center' }}>
+          <div className="wrap g2 feat-billing-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 5fr) minmax(0, 7fr)', gap: '80px', alignItems: 'center' }}>
             <div className="rv" style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
               <p className="eyebrow">01 · Smart Billing</p>
               <h2 className="d h2" style={{ fontSize: '60px' }}>Checkout that keeps the queue moving.</h2>
@@ -46,15 +46,15 @@ export default function FeaturesSection() {
               </ul>
             </div>
 
-            <div className="win ui lift" role="img" aria-label="Billing screen with cart items, discount, GST breakdown, payment method selection and complete bill button">
+            <div className="win ui lift pos-billing-card" role="img" aria-label="Billing screen with cart items, discount, GST breakdown, payment method selection and complete bill button">
               <div className="winbar">
                 <span className="dot" />
                 <span className="dot" />
                 <span className="dot" />
                 <span className="url">Counter 2 · Main Street</span>
               </div>
-              <div className="g2" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.25fr) minmax(0, 1fr)' }}>
-                <div style={{ padding: '20px 22px', borderRight: '1px solid #EEECE7' }}>
+              <div className="g2 pos-billing-split" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.25fr) minmax(0, 1fr)' }}>
+                <div className="pos-cart-col" style={{ padding: '20px 22px', borderRight: '1px solid #EEECE7' }}>
                   <div className="chip c-n" style={{ height: '38px', width: '100%', padding: '0 14px', fontSize: '12px', fontWeight: 500, color: '#6B6E76' }}>
                     ⌕ &nbsp;Scan barcode or type item name
                   </div>
@@ -99,7 +99,7 @@ export default function FeaturesSection() {
                   </div>
                 </div>
 
-                <div style={{ padding: '20px 22px', background: '#FCFBFA', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <div className="pos-summary-col" style={{ padding: '20px 22px', background: '#FCFBFA', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span className="sub" style={{ fontSize: '12px' }}>Subtotal</span>
                     <span>₹1,774.00</span>
@@ -157,7 +157,7 @@ export default function FeaturesSection() {
             </div>
 
             <div className="g2 lift" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 2fr) minmax(0, 1fr)', gap: '20px', marginTop: '80px' }}>
-              <div className="win ui" style={{ padding: '22px 24px' }} role="img" aria-label="Stock levels table with barcodes and status">
+              <div className="win ui stock-table-card" style={{ padding: '22px 24px' }} role="img" aria-label="Stock levels table with barcodes and status">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
                     <div className="ttl" style={{ fontSize: '15px' }}>Stock levels</div>
@@ -165,7 +165,8 @@ export default function FeaturesSection() {
                   </div>
                   <span className="chip c-n" style={{ height: '28px' }}>Category: Staples ▾</span>
                 </div>
-                <div style={{ marginTop: '14px' }}>
+                <div className="table-scroll-container" style={{ marginTop: '14px' }}>
+                  <div className="stock-table-inner">
                   <div className="tr th" style={{ gridTemplateColumns: '1.8fr 1.4fr 1.6fr .7fr' }}>
                     <span>Item</span>
                     <span>Barcode</span>
@@ -311,6 +312,7 @@ export default function FeaturesSection() {
                     </span>
                     <span><span className="chip c-ok">Healthy</span></span>
                   </div>
+                  </div>
                 </div>
               </div>
 
@@ -375,7 +377,7 @@ export default function FeaturesSection() {
         {/* 03 Analytics : visual left large / text right */}
         <section className="sec t-white glass">
           <div className="wrap g2" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 7fr) minmax(0, 4fr)', gap: '88px', alignItems: 'center' }}>
-            <div className="win ui lift" style={{ padding: '28px' }} role="img" aria-label="Revenue chart for the last 12 weeks and top categories by revenue">
+            <div className="win ui lift analytics-card" style={{ padding: '28px' }} role="img" aria-label="Revenue chart for the last 12 weeks and top categories by revenue">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '12px' }}>
                 <div>
                   <div className="sub">Revenue · last 12 weeks</div>
@@ -390,7 +392,7 @@ export default function FeaturesSection() {
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, minmax(0, 1fr))', gap: '10px', alignItems: 'end', height: '220px', marginTop: '28px', borderBottom: '1px solid #EEECE7' }}>
+              <div className="analytics-chart-bars" style={{ display: 'grid', gridTemplateColumns: 'repeat(12, minmax(0, 1fr))', gap: '10px', alignItems: 'end', height: '220px', marginTop: '28px', borderBottom: '1px solid #EEECE7' }}>
                 <span style={{ height: '46%', background: '#E4EFEC', borderRadius: '6px 6px 0 0' }} />
                 <span style={{ height: '52%', background: '#E4EFEC', borderRadius: '6px 6px 0 0' }} />
                 <span style={{ height: '49%', background: '#E4EFEC', borderRadius: '6px 6px 0 0' }} />
@@ -411,7 +413,7 @@ export default function FeaturesSection() {
                 <span>Wk 45</span>
               </div>
 
-              <div className="g2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '28px', marginTop: '28px', paddingTop: '24px', borderTop: '1px solid #F1EFEA' }}>
+              <div className="g2 analytics-breakdown" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '28px', marginTop: '28px', paddingTop: '24px', borderTop: '1px solid #F1EFEA' }}>
                 <div>
                   <div className="ttl" style={{ fontSize: '12px', marginBottom: '14px' }}>Top categories</div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -489,7 +491,7 @@ export default function FeaturesSection() {
             </div>
 
             <div className="lift" style={{ marginTop: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div className="win ui" style={{ padding: '20px 26px', display: 'flex', alignItems: 'center', gap: '16px', minWidth: '300px' }}>
+              <div className="win ui head-office-card" style={{ padding: '20px 26px', display: 'flex', alignItems: 'center', gap: '16px', minWidth: '300px' }}>
                 <span style={{ width: '44px', height: '44px', borderRadius: '12px', background: '#111214', display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 'none' }}>
                   <svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="#fff" strokeWidth="1.5" aria-hidden="true">
                     <path d="M2 6.5 8 2.5l6 4V14H2z" />
@@ -512,7 +514,7 @@ export default function FeaturesSection() {
                 </g>
               </svg>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px', width: '100%', marginTop: 0 }}>
+              <div className="branch-cards-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px', width: '100%', marginTop: 0 }}>
                 <div className="win ui" style={{ padding: '20px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div className="ttl">Main Street</div>
@@ -575,14 +577,14 @@ export default function FeaturesSection() {
         {/* 05 Promotions : visual left / text bottom-right */}
         <section className="sec t-white glass">
           <div className="wrap g2" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 7fr) minmax(0, 5fr)', gap: '80px', alignItems: 'end' }}>
-            <div className="lift" style={{ position: 'relative', padding: '48px', borderRadius: '28px', background: 'linear-gradient(160deg, #FFF6E8 0%, #FBEFDF 100%)' }}>
+            <div className="lift promo-banner-container" style={{ position: 'relative', padding: '48px', borderRadius: '28px', background: 'linear-gradient(160deg, #FFF6E8 0%, #FBEFDF 100%)' }}>
               <div className="win ui" style={{ padding: '24px' }} role="img" aria-label="Promotions list with live, scheduled and ended campaigns">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div className="ttl" style={{ fontSize: '15px' }}>Promotions</div>
                   <span className="chip" style={{ height: '30px', padding: '0 12px', background: '#111214', color: '#fff' }}>+ New campaign</span>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '18px' }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '40px 1fr auto', gap: '14px', alignItems: 'center', padding: '14px', border: '1px solid #EEECE7', borderRadius: '12px' }}>
+                  <div className="promo-item-row" style={{ display: 'grid', gridTemplateColumns: '40px 1fr auto', gap: '14px', alignItems: 'center', padding: '14px', border: '1px solid #EEECE7', borderRadius: '12px' }}>
                     <span style={{ width: '40px', height: '40px', borderRadius: '10px', background: '#E7F3EF', color: '#0B5E4E', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '13px' }}>
                       10%
                     </span>
@@ -593,7 +595,7 @@ export default function FeaturesSection() {
                     <span className="chip c-ok">Live</span>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '40px 1fr auto', gap: '14px', alignItems: 'center', padding: '14px', border: '1px solid #EEECE7', borderRadius: '12px' }}>
+                  <div className="promo-item-row" style={{ display: 'grid', gridTemplateColumns: '40px 1fr auto', gap: '14px', alignItems: 'center', padding: '14px', border: '1px solid #EEECE7', borderRadius: '12px' }}>
                     <span style={{ width: '40px', height: '40px', borderRadius: '10px', background: '#FCEFD9', color: '#8A5300', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '11px' }}>
                       2+1
                     </span>
@@ -604,7 +606,7 @@ export default function FeaturesSection() {
                     <span className="chip c-warn">Scheduled</span>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '40px 1fr auto', gap: '14px', alignItems: 'center', padding: '14px', border: '1px solid #EEECE7', borderRadius: '12px' }}>
+                  <div className="promo-item-row" style={{ display: 'grid', gridTemplateColumns: '40px 1fr auto', gap: '14px', alignItems: 'center', padding: '14px', border: '1px solid #EEECE7', borderRadius: '12px' }}>
                     <span style={{ width: '40px', height: '40px', borderRadius: '10px', background: '#F0EEE9', color: '#4A4D55', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '13px' }}>
                       ₹
                     </span>
@@ -655,8 +657,8 @@ export default function FeaturesSection() {
               <p className="lede">Give administrators full control, managers what they need to run a branch, and cashiers a focused screen for billing. Change a role once and it applies everywhere.</p>
             </div>
 
-            <div className="win ui lift" style={{ marginTop: '72px', overflowX: 'auto' }} role="img" aria-label="Permissions matrix for Administrator, Manager and Cashier roles">
-              <div style={{ minWidth: '640px', padding: '8px 32px 16px' }}>
+            <div className="win ui lift perm-table-card" style={{ marginTop: '72px', overflowX: 'auto' }} role="img" aria-label="Permissions matrix for Administrator, Manager and Cashier roles">
+              <div className="perm-table-inner" style={{ minWidth: '640px', padding: '8px 32px 16px' }}>
                 <div className="tr th" style={{ gridTemplateColumns: '2fr 1fr 1fr 1fr', padding: '20px 0 14px' }}>
                   <span>Permission</span>
                   <span style={{ display: 'flex', flexDirection: 'column' }}>
@@ -738,12 +740,12 @@ export default function FeaturesSection() {
           </div>
 
           <div className="bento rv" style={{ display: 'grid', gridTemplateColumns: 'repeat(12, minmax(0, 1fr))', gap: '16px', marginTop: '64px' }}>
-            <div style={{ gridColumn: 'span 7', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: '32px', flexWrap: 'wrap' }}>
+            <div className="bento-barcode-card" style={{ gridColumn: 'span 7', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: '32px', flexWrap: 'wrap' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '320px' }}>
                 <h3 className="bt">Barcode Scanning</h3>
                 <p className="bp">Scan to bill, scan to receive stock, or print your own barcode labels for loose items.</p>
               </div>
-              <div aria-hidden="true" style={{ padding: '20px 24px', borderRadius: '14px', background: '#FBFAF8', border: '1px solid #EEECE7', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+              <div className="bento-barcode-visual" aria-hidden="true" style={{ padding: '20px 24px', borderRadius: '14px', background: '#FBFAF8', border: '1px solid #EEECE7', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
                 <svg width="180" height="70" viewBox="0 0 180 70">
                   <g fill="#111214">
                     <rect x="0" width="4" height="70" />
@@ -860,7 +862,7 @@ export default function FeaturesSection() {
       {/* ============ SOLUTIONS ============ */}
       <section id="solutions" className="sec solutions-section" style={{ background: '#fff', position: 'relative', zIndex: 2 }}>
         <div className="wrap g2" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 4fr) minmax(0, 7fr)', gap: '80px', alignItems: 'start' }}>
-          <div className="rv" style={{ position: 'sticky', top: '120px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          <div className="rv solutions-sticky-col" style={{ position: 'sticky', top: '120px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
             <p className="eyebrow">Solutions</p>
             <h2 className="d h2" style={{ fontSize: '56px' }}>One platform. Every kind of counter.</h2>
             <p className="lede" style={{ fontSize: '17px' }}>Ledgerly isn't built for one shop — it's a common billing platform that adapts to how your business sells, from a single store to a network of branches.</p>
@@ -992,7 +994,7 @@ export default function FeaturesSection() {
         <div className="wrap rv" style={{ position: 'relative', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <h2 className="d hcta" style={{ fontSize: '112px', maxWidth: '1080px', color: '#fff' }}>Simplify how your business runs.</h2>
           <p className="lede" style={{ color: '#A9ACB4', maxWidth: '560px', marginTop: '32px' }}>Set up your products, branches and team, and start billing — we'll help you every step of the way.</p>
-          <div style={{ display: 'flex', gap: '12px', marginTop: '48px', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <div className="cta-buttons-wrap" style={{ display: 'flex', gap: '12px', marginTop: '48px', flexWrap: 'wrap', justifyContent: 'center' }}>
             <a className="btn btn-acc" href="#start" style={{ minHeight: '56px', padding: '0 32px', fontSize: '16px' }}>Get started</a>
             <a className="btn btn-ghost" href="#contact" style={{ minHeight: '56px', padding: '0 32px', fontSize: '16px' }}>Book a demo</a>
           </div>

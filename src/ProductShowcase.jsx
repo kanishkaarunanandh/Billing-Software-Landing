@@ -12,8 +12,15 @@ export default function ProductShowcase() {
 
     function fit() {
       const w = stage.clientWidth;
-      let s = Math.min(1, Math.max(w * 0.68, Math.min(w * 0.92, 1040)) / 1360);
-      s = Math.max(0.22, Math.round(s * 1000) / 1000);
+      let s;
+      if (w <= 640) {
+        // Optimize mockup scaling for mobile screen widths
+        s = (w - 24) / 1280;
+        s = Math.max(0.24, Math.min(0.38, Math.round(s * 1000) / 1000));
+      } else {
+        s = Math.min(1, Math.max(w * 0.68, Math.min(w * 0.92, 1040)) / 1360);
+        s = Math.max(0.22, Math.round(s * 1000) / 1000);
+      }
       stage.style.setProperty('--s', s.toString());
     }
 
@@ -90,8 +97,8 @@ export default function ProductShowcase() {
           />
 
           {/* 1. TOP: CAPTIONS + CHAPTER PROGRESS BAR */}
-          <div className="wrap" style={{ flex: 'none', height: '96px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', position: 'relative', zIndex: 10, marginBottom: '20px' }}>
-            <div style={{ position: 'relative', flex: 1, height: '64px', maxWidth: '620px' }}>
+          <div className="wrap showcase-header-wrap" style={{ flex: 'none', height: '96px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', position: 'relative', zIndex: 10, marginBottom: '20px' }}>
+            <div className="showcase-caption-box" style={{ position: 'relative', flex: 1, height: '64px', maxWidth: '620px' }}>
               <div className="sa a-scr-d cap" style={{ opacity: 1 }}>
                 <span className="capn">01 · Dashboard</span>
                 <span className="capt">Sales, bills and every branch — the whole day at a glance.</span>
@@ -129,6 +136,10 @@ export default function ProductShowcase() {
               <div style={{ height: '2px', background: '#E6E3DC', borderRadius: '2px', marginTop: '10px', overflow: 'hidden' }}>
                 <span className="sa a-prog" style={{ display: 'block', height: '100%', background: '#111214', transformOrigin: '0 50%' }} />
               </div>
+            </div>
+            {/* Mobile-only Progress Indicator */}
+            <div className="showcase-progress-mobile show-sm" aria-hidden="true">
+              <span className="sa a-prog" />
             </div>
           </div>
 
